@@ -25,6 +25,56 @@
                     Person Address Form
                     <a href="home.html" class="close-button" ><img src="../assets/icons/close.png" alt=""></a>
                 </div>
+                <div class= "row-content">
+                    <label class = "label text" for="name">Full Name</label>
+                    <input class="input" type="text" id="name" name ="name" autocomplete="off" required>
+                </div>
+                <div class= "row-content">
+                    <label class = "label text" for="phone">Phone Number</label>
+                    <input class="input" type="text" id="phone" name ="Phone" autocomplete="off" required>
+                </div>                
+                <div class="row-content">
+                    <label class="label text" for="address">Address</label>
+                    <textarea class="input" id="address" name="Address" placeholder="" style="height:100px"></textarea>
+                </div>
+                <div class="row-content location-row">                    
+                    <div>
+                        <label class="label text" for="city">City</label>
+                            <select id="city" name="City" required>
+                                <option value="" selected="selected">Select a city</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Agra">Agra</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Mysuru">Mysuru</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label class="label text" for="state">State</label>
+                            <select id="state" name="State" required>
+                                <option value="" selected="selected">Select a State</option>
+                                <option value ="Karnataka">Karnataka</option>
+                                <option value ="Maharashtra">Maharashtra</option>
+                                <option value ="Tamil Nadu">Tamil Nadu</option>
+                                <option value ="Kerala">Kerala</option>
+                                <option value ="Rajasthan">Rajasthan</option>
+                                <option value ="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value ="West Bengal">West Bengal</option>
+                                <option value ="Goa">Goa</option>
+                                <option value ="Gujarat">Gujarat</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label class="label text" for="zipcode">Zip Code</label>
+                            <input class="input" type="number" id="zipcode" name ="Zipcode" autocomplete="off" required>
+                    </div>            
+                </div>
+                
             </form>
         </div>
     </body>

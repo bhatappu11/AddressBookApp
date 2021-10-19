@@ -52,6 +52,27 @@ window.addEventListener('DOMContentLoaded',(event) => {
         }
     });
 });
+const save = () => {
+    try{
+        let addressBookData = createAddressBook();
+        createAndUpdateStorage(addressBookData);
+    }catch(e){
+        return;
+    }
+}
+
+function createAndUpdateStorage(addressBookData){
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if(addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    }else{
+        addressBookList = [addressBookData];
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList))
+}
+
+
 const setTextValue = (id, value) => {
     const element = document.querySelector(id);
     element.textContent = value;

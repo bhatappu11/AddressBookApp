@@ -81,3 +81,84 @@ body {
     padding-top: 3px;
     padding-bottom: 20px;
 }
+.row-content {
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid lightskyblue;
+}
+
+.label {
+    min-width: 140px;   
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text {
+    font: normal normal normal 18px/24px Roboto;
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input:focus {
+	outline: none;
+  	border: 1px solid #008CFF;
+}
+
+textarea:focus{
+    outline: none;
+    border: 1px solid #008CFF;
+}
+.location-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+.location-row div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+  
+.location-row div:nth-of-type(2) {
+    margin: 0px 25px;
+}
+  
+.location-row input {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+select {
+    margin-left: 0px;
+    padding: 10px;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    display: inline;
+    width: 100%;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+    resize: vertical;
+}
+
+select:focus {
+	outline: none;
+  	border: 1px solid #008CFF;
+}

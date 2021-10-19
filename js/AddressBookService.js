@@ -73,6 +73,44 @@ function createAndUpdateStorage(addressBookData){
 }
 
 
+const createAddressBook = () => {
+    let addressBookData = new AddressBookData();
+    try{
+        addressBookData.name = getInputValueById('#name');
+    } catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+        addressBookData.phone = getInputValueById('#phone');
+    } catch(e){
+        setTextValue('.phone-error',e);
+        throw e;
+    }  
+    try{
+        addressBookData.address = getInputValueById('#address');
+    } catch(e){
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    addressBookData.city = getInputValueById('#city');
+    addressBookData.state = getInputValueById('#state');
+    try{
+        addressBookData.zipcode = getInputValueById('#zipcode');
+    } catch(e){
+        setTextValue('.zip-error',e);
+        throw e;
+    }    
+    
+    alert(addressBookData.toString());
+    return addressBookData;
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+
 const setTextValue = (id, value) => {
     const element = document.querySelector(id);
     element.textContent = value;

@@ -28,14 +28,17 @@
                 <div class= "row-content">
                     <label class = "label text" for="name">Full Name</label>
                     <input class="input" type="text" id="name" name ="name" autocomplete="off" required>
+                    <error-output class="text-error" for="text"></error-output>
                 </div>
                 <div class= "row-content">
                     <label class = "label text" for="phone">Phone Number</label>
                     <input class="input" type="text" id="phone" name ="Phone" autocomplete="off" required>
+                    <error-output class="phone-error" for="phone"></error-output>
                 </div>                
                 <div class="row-content">
                     <label class="label text" for="address">Address</label>
                     <textarea class="input" id="address" name="Address" placeholder="" style="height:100px"></textarea>
+                    <error-output class="address-error" for="address"></error-output>
                 </div>
                 <div class="row-content location-row">                    
                     <div>
@@ -71,7 +74,8 @@
                     </div>
                     <div>
                         <label class="label text" for="zipcode">Zip Code</label>
-                            <input class="input" type="number" id="zipcode" name ="Zipcode" autocomplete="off" required>
+                            <input class="input" type="text" id="zipcode" name ="Zipcode" required>
+                            <error-output class="zip-error" for="zipcode"></error-output>
                     </div>            
                 </div>
                 

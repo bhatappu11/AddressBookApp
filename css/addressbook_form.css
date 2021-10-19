@@ -40,3 +40,44 @@ body {
 .address-book { color: #42515f; }
 
 * { box-sizing: border-box;}
+
+.form-content {
+    min-height: calc(100% - 80px);
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid lightskyblue;
+}
+
+.form {
+    width: 50%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    opacity: 1;
+    margin: 40px;
+}
+
+.form-head {
+    float: inline;
+    font: normal normal normal 28px/37px Roboto;;
+    letter-spacing: 0px;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 1;
+    padding: 40px;
+    padding-bottom: 35px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.close-button {
+    float: right;
+    padding-right: 40px;
+    padding-top: 3px;
+    padding-bottom: 20px;
+}

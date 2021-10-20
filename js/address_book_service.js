@@ -84,6 +84,73 @@ const checkForUpdate = () => {
     contactObj = JSON.parse(contactJson);
     setForm();
 }
+const createAndUpdateStorage = () => {
+    let contactDataList = JSON.parse(localStorage.getItem("AddressBookList"));
+    if(contactDataList){
+      let contactData = contactDataList.find(contact => contact._id == contactObj._id);
+      if(!contactData) {
+        contactDataList.push(createContactData());
+      }
+      else {
+        const index = contactDataList.map(contact => contact._id)
+                                         .indexOf(contactData._id);
+        contactDataList.splice(index, 1, createContactData(contactData._id));
+      }
+    }
+    else{
+      contactDataList = [createContactData()];
+    }
+    localStorage.setItem("AddressBookList",JSON.stringify(contactDataList));
+  }
+  
+  const createContactData = (id) => {
+    let contactData = new ContactData();
+    if (!id) contactData.id = createNewContactId();
+    else contactData.id = id;
+    setContactData(contactData);
+    return contactData;
+  }
+  
+  const setContactData = (contactData) => {
+    try{
+        contactData.name = contactObj._name;
+    }
+    catch (e) {
+        setTextValue('.text-error',e);
+        throw e;
+    }
+    try{
+        contactData.phone = contactObj._phone;
+    }
+    catch (e) {
+        setTextValue('.phone-error',e);
+        throw e;
+    }
+    try{
+        contactData.address = contactObj._address;
+    }
+    catch (e) {
+        setTextValue('.address-error',e);
+        throw e;
+    }    
+    contactData.city = contactObj._city;
+    contactData.state = contactObj._state;
+    try{
+        contactData.zipcode = contactObj._zipcode;
+    }
+    catch (e) {
+        setTextValue('.zip-error',e);
+        throw e;
+    }
+    alert(contactData.toString());
+  }
+
+const createNewContactId = () => {
+    let contactID = localStorage.getItem("ContactId");
+    contactID = !contactID ? 1 : (parseInt(contactID)+1).toString();
+    localStorage.setItem("ContactId",contactID);
+    return contactID;
+  }
 
 const setForm = () => {
     setValue('#name',contactObj._name);

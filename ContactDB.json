@@ -1,31 +1,67 @@
 {
-    "ContactDB": [
-      {
-        "id": "1",
-        "_name": "Mark",
-        "_address": "Carstreet tth",
-        "_phone": "+919898989898",
-        "_city": "Bengaluru",
-        "_state": "Karnataka",
-        "_zipcode": "512092"
-      },
-      {
-        "id": "2",
-        "_name": "Bill Gates",
-        "_address": "Pebble street",
-        "_phone": "919898989778",
-        "_city": "Bengaluru",
-        "_state": "Karnataka",
-        "_zipcode": "542066"
-      },
-      {
-        "_name": "Shaswath M",
-        "_address": "MGR Road",
-        "_phone": "7798669898",
-        "_city": "Mumbai",
-        "_state": "Maharashtra",
-        "_zipcode": "512033",
-        "id": "3"
-      }
-    ]
-  }
+  "ContactDB": [
+    {
+      "id": "1",
+      "_name": "Mark",
+      "_address": "Carstreet tth",
+      "_phone": "+919898989898",
+      "_city": "Bengaluru",
+      "_state": "Karnataka",
+      "_zipcode": "512092"
+    },
+    {
+      "id": "2",
+      "_name": "Bill Gates",
+      "_address": "Pebble street",
+      "_phone": "919898989778",
+      "_city": "Bengaluru",
+      "_state": "Karnataka",
+      "_zipcode": "542066"
+    },
+    {
+      "_name": "Shaswath M",
+      "_address": "MGR Road",
+      "_phone": "7798669898",
+      "_city": "Mumbai",
+      "_state": "Maharashtra",
+      "_zipcode": "512033",
+      "id": "3"
+    },
+    {
+      "id": "7",
+      "_name": "Ashu",
+      "_phone": "+919876543235",
+      "_address": "kushal nagar",
+      "_city": "Pune",
+      "_state": "Maharashtra",
+      "_zipcode": "512123"
+    },
+    {
+      "id": "8",
+      "_name": "Antony",
+      "_phone": "9876541234",
+      "_address": "kuba plots RRR nagar",
+      "_city": "Mysuru",
+      "_state": "Karnataka",
+      "_zipcode": "511233"
+    },
+    {
+      "id": "9",
+      "_name": "James Jacob",
+      "_phone": "+919901231234",
+      "_address": "931 Baker street",
+      "_city": "Bengaluru",
+      "_state": "Karnataka",
+      "_zipcode": "511234"
+    },
+    {
+      "id": "10",
+      "_name": "Ross Gellar",
+      "_phone": "+919992223454",
+      "_address": "Avenue Road",
+      "_city": "Jaipur",
+      "_state": "Rajasthan",
+      "_zipcode": "555123"
+    }
+  ]
+}

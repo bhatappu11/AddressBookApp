@@ -69,6 +69,7 @@ const save = (event) => {
     }
 }
 const setContactObject = () => {
+    if(!isUpdate ) contactObj.id = createNewEmployeeId();
     contactObj._name = getInputValueById('#name');
     contactObj._phone = getInputValueById('#phone');
     contactObj._address = getInputValueById('#address');
@@ -87,29 +88,29 @@ const checkForUpdate = () => {
 const createAndUpdateStorage = () => {
     let contactDataList = JSON.parse(localStorage.getItem("AddressBookList"));
     if(contactDataList){
-      let contactData = contactDataList.find(contact => contact._id == contactObj._id);
+      let contactData = contactDataList.find(contact => contact.id == contactObj.id);
       if(!contactData) {
-        contactDataList.push(createContactData());
+        contactDataList.push(contactObj);
       }
       else {
-        const index = contactDataList.map(contact => contact._id)
-                                         .indexOf(contactData._id);
-        contactDataList.splice(index, 1, createContactData(contactData._id));
+        const index = contactDataList.map(contact => contact.id)
+                                         .indexOf(contactData.id);
+        contactDataList.splice(index, 1, createContactData(contactData.id));
       }
     }
     else{
-      contactDataList = [createContactData()];
+      contactDataList = [contactObj];
     }
     localStorage.setItem("AddressBookList",JSON.stringify(contactDataList));
   }
   
-  const createContactData = (id) => {
+  /*const createContactData = (id) => {
     let contactData = new ContactData();
     if (!id) contactData.id = createNewContactId();
     else contactData.id = id;
     setContactData(contactData);
     return contactData;
-  }
+  }*/
   
   const setContactData = (contactData) => {
     try{

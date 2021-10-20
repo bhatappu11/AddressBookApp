@@ -1,6 +1,7 @@
 html body {
     margin: 0;
     height: 100%;
+    background: #f7f7f7;
 }
 
 .header {
@@ -101,8 +102,7 @@ html body {
 
 .table{
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0 10px;
+    border-spacing: 0 15px;
     min-width: 800px;
 }
 
@@ -130,7 +130,7 @@ tr:not(:first-child){
 
 td{
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 3px;
+    border: 0px solid #E3E3E3;
     font: normal normal normal 14px/21px Roboto;
     letter-spacing: 0px;
     color: #3D3D3D;

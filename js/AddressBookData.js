@@ -21,7 +21,7 @@ class AddressBookData {
     }
     get address() { return this._address}
     set address(address){
-        let addressRegex = RegExp('[a-zA-Z]{3,}([\\s]*[a-zA-Z]{3,})*');
+        let addressRegex = RegExp('^[a-zA-Z0-9]{3,}([\\s]?[a-zA-Z0-9]{3,})*$');
         if(addressRegex.test(address))
             this._address = address;
         else throw 'Address is Incorrect';

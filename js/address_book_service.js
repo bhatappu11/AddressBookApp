@@ -1,3 +1,5 @@
+let isUpdate = false;
+let contactObj = {};
 window.addEventListener('DOMContentLoaded',(event) => {
     const name = document.querySelector('#name');
     name.addEventListener('input',function(){
@@ -51,7 +53,9 @@ window.addEventListener('DOMContentLoaded',(event) => {
             setTextValue('.zip-error',e);
         }
     });
+    checkForUpdate();
 });
+
 const save = () => {
     try{
         let addressBookData = createAddressBook();
@@ -60,6 +64,41 @@ const save = () => {
         return;
     }
 }
+
+const checkForUpdate = () => {
+    const contactJson = localStorage.getItem('editContact');
+    isUpdate = contactJson ? true : false;
+    if(!isUpdate) return;
+    contactObj = JSON.parse(contactJson);
+    setForm();
+}
+
+const setForm = () => {
+    setValue('#name',contactObj._name);
+    setValue('#phone',contactObj._phone);
+    setValue('#address',contactObj._address);
+    setValue('#city',contactObj._city);
+    setValue('#state',contactObj._state);
+    setValue('#zipcode',contactObj._zipcode);
+}
+
+/*const setSelectedValues = (propertyValue, value) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        if(Array.isArray(value)){
+            if(value.includes(item.value)){
+                item.checked = true;
+            }
+        }
+        else if (item.value === value)
+            item.checked = true;
+    });
+}
+
+const setSelectedIndex = (id, index) => {
+    const element = document.querySelector(id);
+    element.selectedIndex = index;
+}*/
 
 function createAndUpdateStorage(addressBookData){
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));

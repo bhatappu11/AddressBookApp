@@ -82,24 +82,6 @@ const setForm = () => {
     setValue('#zipcode',contactObj._zipcode);
 }
 
-/*const setSelectedValues = (propertyValue, value) => {
-    let allItems = document.querySelectorAll(propertyValue);
-    allItems.forEach(item => {
-        if(Array.isArray(value)){
-            if(value.includes(item.value)){
-                item.checked = true;
-            }
-        }
-        else if (item.value === value)
-            item.checked = true;
-    });
-}
-
-const setSelectedIndex = (id, index) => {
-    const element = document.querySelector(id);
-    element.selectedIndex = index;
-}*/
-
 function createAndUpdateStorage(addressBookData){
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
     if(addressBookList != undefined){

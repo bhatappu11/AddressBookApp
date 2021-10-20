@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try{
-            (new ContactData()).name = name.value;
+            checkName(name.value);
             setTextValue('.text-error',"");
         } catch(e){
             setTextValue('.text-error',e);
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try{
-            (new ContactData()).phone = phone.value;
+            checkPhone(phone.value);
             setTextValue('.phone-error',"");
         } catch(e){
             setTextValue('.phone-error',e);
@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try{
-            (new ContactData()).address = address.value;
+            checkAddress(address.value);
             setTextValue('.address-error',"");
         } catch(e){
             setTextValue('.address-error',e);
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
             return;
         }
         try{
-            (new ContactData()).zipcode = zip.value;
+            checkZip(zip.value);
             setTextValue('.zip-error',"");
         } catch(e){
             setTextValue('.zip-error',e);

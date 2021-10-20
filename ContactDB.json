@@ -1,0 +1,31 @@
+{
+    "ContactDB": [
+      {
+        "id": "1",
+        "_name": "Mark",
+        "_address": "carstreet tth",
+        "_department": "+919898989898",
+        "_city": "Bengaluru",
+        "_state": "Karnataka",
+        "_zipcode": "512092"
+      },
+      {
+        "id": "6",
+        "_name": "Bill Gates",
+        "_address": "pebble street tth",
+        "_department": "+919898989778",
+        "_city": "Bengaluru",
+        "_state": "Karnataka",
+        "_zipcode": "512066"
+      },
+      {
+        "_name": "Shashanka Keerthi",
+        "_address": "MGR Road",
+        "_department": "+919898669898",
+        "_city": "Mumbai",
+        "_state": "Maharashtra",
+        "_zipcode": "512033",
+        "id": "5"
+      }
+    ]
+  }

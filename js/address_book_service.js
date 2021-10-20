@@ -93,13 +93,6 @@ const setForm = () => {
     setValue('#state',contactObj._state);
     setValue('#zipcode',contactObj._zipcode);
 }
-const createNewContactId = () => {
-    let contactID = localStorage.getItem("ContactId");
-    contactID = !contactID ? 1 : (parseInt(contactID)+1).toString();
-    localStorage.setItem("ContactId",contactID);
-    return contactID;
-  }
-
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;

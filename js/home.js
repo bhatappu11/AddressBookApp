@@ -60,9 +60,20 @@ const remove = (node) => {
                     .map(contact => contact.id)
                     .indexOf(contactData.id);
     contactDataList.splice(index, 1);
-    localStorage.setItem("AddressBookList",JSON.stringify(contactDataList));
-    document.querySelector(".address-count").textContent = contactDataList.length;
-    createInnerHtml();
+    if(site_properties.use_local_storage.match("true")){
+        localStorage.setItem("AddressBookList", JSON.stringify(contactDataList));
+        createInnerHtml();
+    }
+    else{
+        const deleteUrl = site_properties.server_url+ contactData.id.toString();
+        makeServiceCall("DELETE",deleteUrl, false)
+            .then(responseText => {
+                createInnerHtml();
+            })
+            .catch(error => {
+                console.log("DELETE Error Status: "+ JSON.stringify(error));
+            })
+    }
 }
 const update = (node) => {
     let contactData = contactDataList.find(contact => contact.id == node.id);

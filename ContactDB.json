@@ -3,29 +3,29 @@
       {
         "id": "1",
         "_name": "Mark",
-        "_address": "carstreet tth",
-        "_department": "+919898989898",
+        "_address": "Carstreet tth",
+        "_phone": "+919898989898",
         "_city": "Bengaluru",
         "_state": "Karnataka",
         "_zipcode": "512092"
       },
       {
-        "id": "6",
+        "id": "2",
         "_name": "Bill Gates",
-        "_address": "pebble street tth",
-        "_department": "+919898989778",
+        "_address": "Pebble street",
+        "_phone": "919898989778",
         "_city": "Bengaluru",
         "_state": "Karnataka",
-        "_zipcode": "512066"
+        "_zipcode": "542066"
       },
       {
-        "_name": "Shashanka Keerthi",
+        "_name": "Shaswath M",
         "_address": "MGR Road",
-        "_department": "+919898669898",
+        "_phone": "7798669898",
         "_city": "Mumbai",
         "_state": "Maharashtra",
         "_zipcode": "512033",
-        "id": "5"
+        "id": "3"
       }
     ]
   }

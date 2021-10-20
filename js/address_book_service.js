@@ -75,6 +75,7 @@ function createAndUpdateStorage(addressBookData){
 
 const createAddressBook = () => {
     let addressBookData = new ContactData();
+    addressBookData.id = createNewContactId();
     try{
         addressBookData.name = getInputValueById('#name');
     } catch(e){
@@ -105,6 +106,13 @@ const createAddressBook = () => {
     alert(addressBookData.toString());
     return addressBookData;
 }
+
+const createNewContactId = () => {
+    let contactID = localStorage.getItem("ContactId");
+    contactID = !contactID ? 1 : (parseInt(contactID)+1).toString();
+    localStorage.setItem("ContactId",contactID);
+    return contactID;
+  }
 
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;

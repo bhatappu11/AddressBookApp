@@ -1,24 +1,35 @@
+let contactDataList;
 window.addEventListener('DOMContentLoaded',(event) => {
+    contactDataList = getContactDataFromStorage();
+    document.querySelector(".address-count").textContent = contactDataList.length;
     createInnerHtml();
+    localStorage.removeItem('editContact');
 });
-
+const getContactDataFromStorage = () => {
+    return localStorage.getItem('AddressBookList') ?
+            JSON.parse(localStorage.getItem('AddressBookList')) : [];
+}
 const createInnerHtml = () => {
     const headerHtml = "<tr><th>FullName</th><th>Address</th><th>City</th><th>State</th><th>Zip code</th><th>Phone Number</th></tr>";
-    const innerHtml = `${headerHtml}
+    if(contactDataList.length == 0) return;
+    let innerHtml = `${headerHtml}`;
+    for(const contactData of contactDataList) {
+        innerHtml = `${innerHtml}
         <tr>
-            <td>Arpitha Bhat</td>
-            <td>carstreet tth</td>
-            <td>Bengaluru</td>
-            <td>Karnataka</td>
-            <td>563298</td>
-            <td>+918987654345</td>
+            <td>${contactData._name}</td>
+            <td>${contactData._address}</td>
+            <td>${contactData._city}</td>
+            <td>${contactData._state}</td>
+            <td>${contactData._zipcode}</td>
+            <td>${contactData._phone}</td>
             <td>
-                <img id="1" onclick="remove(this)" alt="delete"
+                <img name="${contactData._id}" onclick="remove(this)" alt="delete"
                 src="../assets/icons/delete-black-18dp.svg" style="padding-right: 5px;">
-                <img id="1" alt="edit" onclick="update(this)"
+                <img name="${contactData._id}" alt="edit" onclick="update(this)"
                 src="../assets//icons/create-black-18dp.svg">
             </td>
         </tr>
     `;
     document.querySelector('#table-display').innerHTML = innerHtml;
+    }
 } 

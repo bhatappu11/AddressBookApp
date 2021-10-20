@@ -44,3 +44,9 @@ const remove = (node) => {
     document.querySelector(".address-count").textContent = contactDataList.length;
     createInnerHtml();
 }
+const update = (node) => {
+    let contactData = contactDataList.find(contact => contact._id == node.id);
+    if(!contactData) return;
+    localStorage.setItem('editContact',JSON.stringify(contactData))
+    window.location.replace(site_properties.add_contact_page);
+}

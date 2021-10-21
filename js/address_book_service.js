@@ -5,12 +5,15 @@ window.addEventListener('DOMContentLoaded',(event) => {
     name.addEventListener('input',function(){
         if(name.value.length == 0){
             setTextValue('.text-error',"");
+            buttonAction(true);
             return;
         }
         try{
             checkName(name.value);
+            enableButton();
             setTextValue('.text-error',"");
         } catch(e){
+            buttonAction(true);
             setTextValue('.text-error',e);
         }
     });
@@ -18,10 +21,12 @@ window.addEventListener('DOMContentLoaded',(event) => {
     phone.addEventListener('input',function(){
         if(phone.value.length == 0){
             setTextValue('.phone-error',"");
+            buttonAction(true);
             return;
         }
         try{
             checkPhone(phone.value);
+            enableButton();
             setTextValue('.phone-error',"");
         } catch(e){
             setTextValue('.phone-error',e);
@@ -30,31 +35,47 @@ window.addEventListener('DOMContentLoaded',(event) => {
     const address = document.querySelector('#address');
     address.addEventListener('input',function(){
         if(address.value.length == 0){
+            buttonAction(true);
             setTextValue('.address-error',"");
             return;
         }
         try{
             checkAddress(address.value);
+            enableButton();
             setTextValue('.address-error',"");
         } catch(e){
+            buttonAction(true);
             setTextValue('.address-error',e);
         }
     });
     const zip = document.querySelector('#zipcode');
     zip.addEventListener('input',function(){
         if(zip.value.length == 0){
+            buttonAction(true);
             setTextValue('.zip-error',"");
             return;
         }
         try{
             checkZip(zip.value);
+            enableButton();
             setTextValue('.zip-error',"");
         } catch(e){
+            buttonAction(true);
             setTextValue('.zip-error',e);
         }
     });
+    const enableButton = () => {
+        if (zip.value && phone.value && name.value && address.value) {
+            buttonAction(false);
+        }
+    }
     checkForUpdate();
 });
+const buttonAction = (value) => {
+    document.getElementById('submitButton').disabled = value;
+    document.getElementById('resetButton').disabled = value
+}
+
 
 const save = (event) => {
     event.preventDefault();

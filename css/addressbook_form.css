@@ -198,6 +198,10 @@ select:focus {
     border-radius: 5px;
     opacity: 1;
 }
+.submitButton:disabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
 .submitButton:hover {
     background:  #008CFF 0% 0% no-repeat padding-box;
     color: #FFFFFF;

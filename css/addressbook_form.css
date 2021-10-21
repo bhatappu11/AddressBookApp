@@ -127,6 +127,8 @@ textarea:focus{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+    resize: vertical;
+    flex-wrap: wrap;
   }
   
 .location-row div {
@@ -227,6 +229,12 @@ error-output {
 @media only screen and (max-width: 600px) {
     .form{
         margin-top : 10px;
+    }
+    .location-row div:nth-last-of-type(2) {
+        margin: 0px 0px;
+    }
+    .row-content{
+        width: 100%;
     }
     .row {
         flex-direction: column;
